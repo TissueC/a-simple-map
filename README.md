@@ -1,6 +1,5 @@
 # a-simple-map
-map with red-black-tree data structure.iterator included.
+map implemented with red-black-tree data structure.iterator included.
 
-
-almost all function will be included in map.
-SJTU homework.
+almost all functions will be included in it.
+This is SJTU homework.
