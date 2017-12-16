@@ -26,7 +26,7 @@ private:
 	Stacknode* top;
 public:
 
-	linkStack(){}
+	linkStack():top(NULL){}
 	~linkStack()
 	{
 		Stacknode* tmp = top;
@@ -545,7 +545,7 @@ public:
 			else
 			{
 				is_dummy = true;
-				//此时变成end()
+				//姝ゆ椂鍙樻垚end()
 			}
 			return ans;
 
@@ -573,7 +573,7 @@ public:
 			else
 			{
 				is_dummy = true;
-				//此时变成end()
+				//姝ゆ椂鍙樻垚end()
 			}
 
 			return *this;
@@ -731,7 +731,7 @@ public:
 			else
 			{
 				is_dummy = true;
-				//此时变成end()
+				//姝ゆ椂鍙樻垚end()
 			}
 			return ans;
 
@@ -759,7 +759,7 @@ public:
 			else
 			{
 				is_dummy = true;
-				//此时变成end()
+				//姝ゆ椂鍙樻垚end()
 			}
 
 			return *this;
@@ -878,8 +878,8 @@ public:
 
 	void deep_copy(node* &r, node* other_r,node* tmp)
 	{
-		if (r == NULL)
-			r = new node(*other_r->data, NULL, NULL, other_r->color, tmp);
+		if (other.r == NULL) return;
+		r = new node(*other_r->data, NULL, NULL, other_r->color, tmp);
 		if(other_r->left) deep_copy(r->left, other_r->left, r);
 		if(other_r->right) deep_copy(r->right, other_r->right, r);
 	}
@@ -890,7 +890,11 @@ public:
 
 	map(const map &other)
 	{
-		if (other.root == NULL) return;
+		if (other.root == NULL) 
+		{
+			root=NULL;
+			return;
+		}
 		deep_copy(root,other.root,NULL);
 		sz = other.sz;
 	}
